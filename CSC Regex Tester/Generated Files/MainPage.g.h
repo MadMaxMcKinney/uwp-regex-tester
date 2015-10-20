@@ -7,6 +7,15 @@
 //------------------------------------------------------------------------------
 
 
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                ref class TextBox;
+            }
+        }
+    }
+}
 
 namespace CSC_Regex_Tester
 {
@@ -23,6 +32,8 @@ namespace CSC_Regex_Tester
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::TextBox^ tbTestString;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ tbRegexValue;
     };
 }
 

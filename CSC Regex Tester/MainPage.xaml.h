@@ -16,6 +16,5 @@ namespace CSC_Regex_Tester
 	{
 	public:
 		MainPage();
-
 	};
 }

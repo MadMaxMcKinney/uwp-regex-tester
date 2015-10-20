@@ -13,10 +13,10 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Background="{StaticResource ResourceKey=PrimaryColor}" HorizontalAlignment="Stretch" Grid.Row="0">
+        <StackPanel Background="{StaticResource PrimaryColor}" HorizontalAlignment="Stretch" Grid.Row="0">
             <StackPanel Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                <TextBox Width="200" />
-                <TextBox Width="200" Margin="20,0,0,0"/>
+                <TextBox Name="tbTestString" Width="200" BorderBrush="{StaticResource PrimaryColor}" BorderThickness="0.1"/>
+                <TextBox Name="tbRegexValue" Width="200" Margin="20,0,0,0" BorderBrush="{StaticResource PrimaryColor}" BorderThickness="0.1"/>
             </StackPanel>
         </StackPanel>
         

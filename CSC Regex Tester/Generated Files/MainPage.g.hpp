@@ -25,8 +25,19 @@ void ::CSC_Regex_Tester::MainPage::InitializeComponent()
 
 void ::CSC_Regex_Tester::MainPage::Connect(int __connectionId, ::Platform::Object^ __target)
 {
-    __connectionId;         // unreferenced 
-    __target;               // unreferenced
+    switch (__connectionId)
+    {
+        case 1:
+            {
+                this->tbTestString = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            }
+            break;
+        case 2:
+            {
+                this->tbRegexValue = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            }
+            break;
+    }
     _contentLoaded = true;
 }
 

@@ -64,10 +64,6 @@
 
 ::Windows::UI::Xaml::Markup::IXamlType^ ::XamlTypeInfo::InfoProvider::XamlTypeInfoProvider::CreateXamlType(::Platform::String^ typeName)
 {
-    if (typeName == L"Object")
-    {
-        return ref new XamlSystemBaseType(typeName);
-    }
     if (typeName == L"Windows.UI.Xaml.Controls.Page")
     {
         return ref new XamlSystemBaseType(typeName);
@@ -76,22 +72,6 @@
     {
         return ref new XamlSystemBaseType(typeName);
     }
-    if (typeName == L"Windows.UI.Color")
-    {
-        ::XamlTypeInfo::InfoProvider::XamlUserType^ userType = ref new ::XamlTypeInfo::InfoProvider::XamlUserType(this, L"Windows.UI.Color", this->GetXamlTypeByName(L"System.ValueType"));
-        userType->KindOfType = ::Windows::UI::Xaml::Interop::TypeKind::Metadata;
-        return userType;
-    }
-
-
-    if (typeName == L"System.ValueType")
-    {
-        ::XamlTypeInfo::InfoProvider::XamlUserType^ userType = ref new ::XamlTypeInfo::InfoProvider::XamlUserType(this, L"System.ValueType", this->GetXamlTypeByName(L"Object"));
-        userType->KindOfType = ::Windows::UI::Xaml::Interop::TypeKind::Metadata;
-        return userType;
-    }
-
-
     if (typeName == L"CSC_Regex_Tester.MainPage")
     {
         ::XamlTypeInfo::InfoProvider::XamlUserType^ userType = ref new ::XamlTypeInfo::InfoProvider::XamlUserType(this, L"CSC_Regex_Tester.MainPage", this->GetXamlTypeByName(L"Windows.UI.Xaml.Controls.Page"));
