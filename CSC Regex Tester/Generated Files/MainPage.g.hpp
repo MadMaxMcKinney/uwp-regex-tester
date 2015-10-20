@@ -29,12 +29,26 @@ void ::CSC_Regex_Tester::MainPage::Connect(int __connectionId, ::Platform::Objec
     {
         case 1:
             {
-                this->tbTestString = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+                this->txtTestString = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 2:
             {
+                this->txtResult = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 3:
+            {
                 this->tbRegexValue = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(this->tbRegexValue))->TextChanged += ref new ::Windows::UI::Xaml::Controls::TextChangedEventHandler(this, (void (::CSC_Regex_Tester::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Controls::TextChangedEventArgs^))&MainPage::tbRegexValue_TextChanged);
+            }
+            break;
+        case 4:
+            {
+                this->tbTestString = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(this->tbTestString))->TextChanged += ref new ::Windows::UI::Xaml::Controls::TextChangedEventHandler(this, (void (::CSC_Regex_Tester::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Controls::TextChangedEventArgs^))&MainPage::tbTestString_TextChanged);
             }
             break;
     }

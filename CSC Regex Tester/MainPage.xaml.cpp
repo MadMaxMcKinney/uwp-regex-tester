@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include <regex>
 
 using namespace CSC_Regex_Tester;
 
@@ -43,5 +44,24 @@ MainPage::MainPage()
 	InitializeComponent();
 	// Setup the styling on the Title Bar
 	InitTitleBar();
+}
 
+
+void CSC_Regex_Tester::MainPage::tbTestString_TextChanged(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
+{
+	// Get the current test string. We need to safe cast it in order to convert from sender to a useful object
+	TextBox ^testString = safe_cast<TextBox^>(sender);
+
+	// Show the result in the preview text
+	txtResult->Text = testString->Text;
+	// Display the original test string above the main output,
+	// We do this so when we change the main output we can still preview the test string
+	txtTestString->Text = testString->Text;
+
+}
+
+
+void CSC_Regex_Tester::MainPage::tbRegexValue_TextChanged(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
+{
+	// Show the test string result with the given regex
 }
