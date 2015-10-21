@@ -1,13 +1,9 @@
-﻿//
-// MainPage.xaml.cpp
-// Implementation of the MainPage class.
-//
-
-#include "pch.h"
+﻿#include "pch.h"
 #include "MainPage.xaml.h"
-#include <regex>
+#using <system.dll>
 
 using namespace CSC_Regex_Tester;
+using namespace System::Text::RegularExpressions;
 
 using namespace Platform;
 using namespace Windows::Foundation;
@@ -64,4 +60,10 @@ void CSC_Regex_Tester::MainPage::tbTestString_TextChanged(Platform::Object^ send
 void CSC_Regex_Tester::MainPage::tbRegexValue_TextChanged(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
 {
 	// Show the test string result with the given regex
+	TextBox ^regexValueFromInput = safe_cast<TextBox^>(sender);
+	// Get the actual string value of the regex we will be using
+	String ^pattern = regexValueFromInput->Text;
+
+	//Regex ^regex = ref Regex(pattern);
+
 }
