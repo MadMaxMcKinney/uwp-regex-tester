@@ -8,9 +8,11 @@
     <Application.Resources>
 
         <ResourceDictionary>
-            <SolidColorBrush x:Key="PrimaryColor" Color="#2196F3" />
-            <SolidColorBrush x:Key="PrimaryColorDark" Color="#1976D2" />
-            <SolidColorBrush x:Key="AccentColor" Color="#ffd740" />
+            <SolidColorBrush x:Key="PrimaryColor" Color="#4CAF50" />
+            <SolidColorBrush x:Key="PrimaryColorDark" Color="#388E3C" />
+            <SolidColorBrush x:Key="AccentColor" Color="#536DFE" />
+            <SolidColorBrush x:Key="White" Color="#FFFFFF" />
+            <SolidColorBrush x:Key="Black" Color="#212121" />
         </ResourceDictionary>
 
     </Application.Resources>

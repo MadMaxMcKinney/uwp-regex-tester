@@ -16,18 +16,18 @@
         <StackPanel Background="{StaticResource PrimaryColor}" HorizontalAlignment="Stretch" Grid.Row="0">
             <StackPanel Margin="0,70,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                 <StackPanel>
-                    <TextBlock Text="Test String" Margin="0,0,0,20" Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource AccentColor}" />
+                    <TextBlock Text="Test String" Margin="0,0,0,20" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource White}" />
                     <TextBox x:ConnectionId='4'                                        Name="tbTestString" Width="200" BorderBrush="{StaticResource PrimaryColor}" BorderThickness="0.1"/>
                 </StackPanel>
                 <StackPanel Margin="20,0,0,0">
-                    <TextBlock Text="Regex Input" Margin="0,0,0,20" Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource AccentColor}" />
+                    <TextBlock Text="Regex Input" Margin="0,0,0,20" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource White}" />
                     <TextBox x:ConnectionId='3'                                        Name="tbRegexValue" Width="200" BorderBrush="{StaticResource PrimaryColor}" BorderThickness="0.1"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
         
         <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <TextBlock x:ConnectionId='1' Name="txtTestString" HorizontalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource PrimaryColor}" />
+            <TextBlock x:ConnectionId='1' Name="txtTestString" HorizontalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource AccentColor}" />
             <TextBlock x:ConnectionId='2' Name="txtResult" Style="{StaticResource HeaderTextBlockStyle}" />
         </StackPanel>
         

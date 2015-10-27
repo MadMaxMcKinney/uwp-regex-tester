@@ -1,9 +1,8 @@
 ﻿#include "pch.h"
 #include "MainPage.xaml.h"
-#using <system.dll>
+#include <string>
 
 using namespace CSC_Regex_Tester;
-using namespace System::Text::RegularExpressions;
 
 using namespace Platform;
 using namespace Windows::Foundation;
@@ -23,7 +22,7 @@ void InitTitleBar() {
 	ApplicationView ^view = ApplicationView::GetForCurrentView();
 
 	// Set the colors we are using for the Title Bar
-	Color primaryColorDark = ColorHelper::FromArgb(255, 25, 118, 210);
+	Color primaryColorDark = ColorHelper::FromArgb(255, 56, 142, 60);
 
 	// Get a pointer to the Title Bar from the view and set the colors
 	ApplicationViewTitleBar ^title = view->TitleBar;
@@ -59,11 +58,14 @@ void CSC_Regex_Tester::MainPage::tbTestString_TextChanged(Platform::Object^ send
 
 void CSC_Regex_Tester::MainPage::tbRegexValue_TextChanged(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
 {
-	// Show the test string result with the given regex
+	// Get the regex pattern text box
 	TextBox ^regexValueFromInput = safe_cast<TextBox^>(sender);
-	// Get the actual string value of the regex we will be using
+	// Get the actual string value of the regex pattern we will be using
 	String ^pattern = regexValueFromInput->Text;
+	// Convert to a wstring we can use c++ types
+	std::wstring pat = pattern->Data();
 
-	//Regex ^regex = ref Regex(pattern);
+	// Show the result by converting the wstring to Platform::String
+	txtResult->Text = ref new String(pat.c_str());
 
 }
