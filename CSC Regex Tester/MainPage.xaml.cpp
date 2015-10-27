@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "MainPage.xaml.h"
 #include <string>
+#include <regex>
 
 using namespace CSC_Regex_Tester;
 
@@ -16,6 +17,8 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 using namespace Windows::UI::ViewManagement;
+
+std::wstring testTitle;
 
 void InitTitleBar() {
 	// Grab a pointer to the view
@@ -34,6 +37,30 @@ void InitTitleBar() {
 	return;
 }
 
+std::wstring s2ws(const std::string& s)
+{
+	int len;
+	int slength = (int)s.length() + 1;
+	len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);
+	wchar_t* buf = new wchar_t[len];
+	MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);
+	std::wstring r(buf);
+	delete[] buf;
+	return r;
+}
+
+std::string ws2s(const std::wstring& s)
+{
+	int len;
+	int slength = (int)s.length() + 1;
+	len = WideCharToMultiByte(CP_ACP, 0, s.c_str(), slength, 0, 0, 0, 0);
+	char* buf = new char[len];
+	WideCharToMultiByte(CP_ACP, 0, s.c_str(), slength, buf, len, 0, 0);
+	std::string r(buf);
+	delete[] buf;
+	return r;
+}
+
 MainPage::MainPage()
 {
 	InitializeComponent();
@@ -49,6 +76,10 @@ void CSC_Regex_Tester::MainPage::tbTestString_TextChanged(Platform::Object^ send
 
 	// Show the result in the preview text
 	txtResult->Text = testString->Text;
+
+	// Store the result in a global var so we can reference it in the other method
+	testTitle = testString->Text->Data();
+
 	// Display the original test string above the main output,
 	// We do this so when we change the main output we can still preview the test string
 	txtTestString->Text = testString->Text;
@@ -64,8 +95,25 @@ void CSC_Regex_Tester::MainPage::tbRegexValue_TextChanged(Platform::Object^ send
 	String ^pattern = regexValueFromInput->Text;
 	// Convert to a wstring we can use c++ types
 	std::wstring pat = pattern->Data();
+	// Store the result here
+	std::wstring result;
 
-	// Show the result by converting the wstring to Platform::String
-	txtResult->Text = ref new String(pat.c_str());
+	// Do the Regex search
+	try {
+		std::wregex regPat(pat);
+		std::wsregex_iterator next(testTitle.begin(), testTitle.end(), regPat);
+		std::wsregex_iterator end;
+		while (next != end) {
+			std::wsmatch match = *next;
+			result = match.str();
+			next++;
+		}
+	} 
+	catch (std::regex_error& e) {
+		// Regrex expression error
+	}
+
+	// Show the result by converting the string to a wstring and then to Platform::String
+	txtResult->Text = ref new String(result.c_str());
 
 }
