@@ -66,6 +66,9 @@ MainPage::MainPage()
 	InitializeComponent();
 	// Setup the styling on the Title Bar
 	InitTitleBar();
+
+	int y = 2;
+	y = 3;
 }
 
 

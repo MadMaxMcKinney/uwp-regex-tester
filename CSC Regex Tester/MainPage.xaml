@@ -16,7 +16,7 @@
         <StackPanel Background="{StaticResource PrimaryColor}" HorizontalAlignment="Stretch" Grid.Row="0">
             <StackPanel Margin="0,35,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                 <StackPanel>
-                    <TextBlock Text="Test String" Margin="0,0,0,10" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource White}" />
+                    <TextBlock Text="Test Input" Margin="0,0,0,10" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource White}" />
                     <TextBox TextChanged="tbTestString_TextChanged" Name="tbTestString" Width="200" BorderBrush="{StaticResource PrimaryColor}" BorderThickness="0.1"/>
                 </StackPanel>
                 <StackPanel Margin="20,0,0,0">
@@ -27,7 +27,7 @@
         </StackPanel>
 
         <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <TextBlock Name="txtTestString" HorizontalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource AccentColor}" />
+            <TextBlock Name="txtTestString" Text="Stored Result Here" HorizontalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource AccentColor}" />
             <TextBlock Name="txtResult" Text="Result Here" Style="{StaticResource HeaderTextBlockStyle}" />
         </StackPanel>
 
