@@ -13,6 +13,9 @@
             <SolidColorBrush x:Key="AccentColor" Color="#536DFE" />
             <SolidColorBrush x:Key="White" Color="#FFFFFF" />
             <SolidColorBrush x:Key="Black" Color="#212121" />
+
+            <x:String x:Key="RegexQuickRefTypes">This is a resource</x:String>
+
         </ResourceDictionary>
 
     </Application.Resources>

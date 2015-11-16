@@ -157,6 +157,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Assets\Web\quickref.html" />
     <None Include="CSC Regex Tester_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

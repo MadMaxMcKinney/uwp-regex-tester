@@ -26,10 +26,36 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <TextBlock Name="txtTestString" Text="Stored Result Here" HorizontalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource AccentColor}" />
-            <TextBlock Name="txtResult" Text="Result Here" Style="{StaticResource HeaderTextBlockStyle}" />
-        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Background="#181818">
+                <!--<TextBlock Padding="15,20,20,20" Foreground="White">Quick Reference</TextBlock>-->
+                <ListView>
+                    <ListViewItem>"Any Character" .</ListViewItem>
+                    <ListViewItem>"Alternation" |</ListViewItem>
+                    <ListViewItem>"Alternation" \|</ListViewItem>
+                    <ListViewItem>"Greedy quantifier" ?</ListViewItem>
+                
+                
+                
+                
+                
+                </ListView>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <TextBlock Name="txtTestString" Text="Stored Result Here" HorizontalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource AccentColor}" />
+                <TextBlock Name="txtResult" Text="Result Here" Style="{StaticResource HeaderTextBlockStyle}" />
+            </StackPanel>
+
+        </Grid>
 
     </Grid>
 </Page>

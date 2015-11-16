@@ -61,8 +61,8 @@ std::string ws2s(const std::wstring& s)
 	return r;
 }
 
-MainPage::MainPage()
-{
+MainPage::MainPage() {
+
 	InitializeComponent();
 	// Setup the styling on the Title Bar
 	InitTitleBar();

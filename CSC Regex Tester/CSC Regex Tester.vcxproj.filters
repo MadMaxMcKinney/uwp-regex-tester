@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CSC Regex Tester_TemporaryKey.pfx" />
+    <None Include="Assets\Web\quickref.html">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
